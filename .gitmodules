@@ -1,0 +1,9 @@
+[submodule "cover"]
+	path = cover
+	url = https://github.com/babelbooks/cover.git
+[submodule "babel"]
+	path = babel
+	url = https://github.com/babelbooks/babel.git
+[submodule "engine"]
+	path = engine
+	url = https://github.com/babelbooks/engine.git
