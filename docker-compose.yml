@@ -1,0 +1,37 @@
+version: '2'
+services:
+
+  babeldb:
+    extends:
+      file: ./babel/docker-compose.yml
+      service: babeldb
+
+  babel:
+    extends:
+      file: ./babel/docker-compose.yml
+      service: babel
+    links:
+      - babeldb:babeldb
+
+  babelindex:
+    extends:
+      file: ./engine/docker-compose.yml
+      service: babelengine
+
+  engine:
+    extends:
+      file: ./engine/docker-compose.yml
+      service: engine
+    links:
+      - babelindex:babelindex
+
+  cover:
+    build: ./cover
+    links:
+      - engine:engine
+      - babel:babel
+    environment:
+      - BB_ENGINE_HOST=engine
+      - BB_ENGINE_PORT=3002
+      - BB_BABEL_HOST=babel
+      - BB_BABEL_PORT=3000
