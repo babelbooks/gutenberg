@@ -7,3 +7,6 @@
 [submodule "engine"]
 	path = engine
 	url = https://github.com/babelbooks/engine.git
+[submodule "printer"]
+	path = printer
+	url = https://github.com/babelbooks/printer
