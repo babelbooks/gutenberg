@@ -25,8 +25,8 @@ services:
     external_links:
       - babelindex:babelindex
 
-  cover:
-    build: ./cover
+  printer:
+    build: ./printer
     external_links:
       - engine:engine
       - babel:babel
