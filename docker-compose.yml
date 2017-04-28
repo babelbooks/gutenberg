@@ -10,24 +10,24 @@ services:
     extends:
       file: ./babel/docker-compose.yml
       service: babel
-    links:
+    external_links:
       - babeldb:babeldb
 
   babelindex:
     extends:
       file: ./engine/docker-compose.yml
-      service: babelengine
+      service: babelindex
 
   engine:
     extends:
       file: ./engine/docker-compose.yml
       service: engine
-    links:
+    external_links:
       - babelindex:babelindex
 
   cover:
     build: ./cover
-    links:
+    external_links:
       - engine:engine
       - babel:babel
     environment:
