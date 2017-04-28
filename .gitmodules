@@ -10,3 +10,6 @@
 [submodule "printer"]
 	path = printer
 	url = https://github.com/babelbooks/printer
+[submodule "doc"]
+	path = doc
+	url = https://github.com/babelbooks/doc
