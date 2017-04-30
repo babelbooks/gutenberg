@@ -1,0 +1,27 @@
+{
+  "name": "@babelbooks/gutenberg",
+  "version": "1.0.0",
+  "description": "Meta Repository for Babel books. Please do not work in this repository, instead use the individual git",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "prestart": "git submodule foreach npm install",
+    "start": "docker-compose up",
+    "prerebuild": "npm run prestart",
+    "rebuild": "docker-compose up --build",
+    "predaemon": "npm run prestart",
+    "daemon": "docker-compose up -d",
+    "predaemon-rebuild": "npm run prestart",
+    "daemon-rebuild": "docker-compose up -d --build",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babelbooks/gutenberg.git"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/babelbooks/gutenberg/issues"
+  },
+  "homepage": "https://github.com/babelbooks/gutenberg#readme"
+}
