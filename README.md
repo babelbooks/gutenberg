@@ -6,17 +6,20 @@ Meta Repository for Babel books. Please do not work in this repository, instead 
 2. Init submodules: `git submodule update --init --recursive`
 3. Deploy it with the master docker-compose file.
 
-    Please note that `printer` is a bit tricky to build.
-    So an extra step is needed to compose:
+    To ensure that everything is ok, it's better to use our packaged command:
     
     ```
-    cd printer
-    npm run deploy
-    cd ..
-    docker-compose up
+    npm start
     ```
     
-    NOTE: If you want to **re**build it, don't forget to add `--build` to the docker-compose command.
+    NOTE: By default, the command above doesn't rebuild images if not needed and doesn't run as a deamon.
+    If you want to **re**build it and/or run it as deamon, use one of these commands instead:
+    
+    ```
+    npm run rebuild
+    npm run daemon
+    npm run daemon-rebuild
+    ```
 
 ## Update the git submodules
 This command will update all the submodules in this repository:
