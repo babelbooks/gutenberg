@@ -27,6 +27,8 @@ services:
 
   printer:
     build: ./printer
+    ports:
+      - "3001:3001"
     external_links:
       - engine:engine
       - babel:babel
